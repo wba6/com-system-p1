@@ -21,10 +21,6 @@ loop:
         lw   $a1, 0($t1)     # load B[i] into $a1
 
         # Multiply and accumulate into $s0
-        # If your SPIM doesn't support 'mul', use 'mult'/'mflo':
-        #   mult $a0, $a1
-        #   mflo $v1
-        #   add  $s0, $s0, $v1
         mul  $v1, $a0, $a1   # multiply A[i]*B[i], store in $v1
         add  $s0, $s0, $v1   # sum += product
 
